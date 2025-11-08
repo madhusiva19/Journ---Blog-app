@@ -1,0 +1,88 @@
+/* Theme variables */
+:root{
+  --bg: #f5f7fa;
+  --panel: #ffffff;
+  --text: #1f2a37;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #2563eb;
+  --danger: #dc2626;
+  --ring: rgba(37,99,235,.25);
+  --radius: 12px;
+  --max: 960px;
+  --shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size:16px; line-height:1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings */
+h1,h2,h3{font-family: Georgia, serif; margin:0 0 10px}
+h1{font-size:28px}
+h2{font-size:20px}
+
+/* Layout container */
+.container{max-width:var(--max); margin:0 auto; padding:20px}
+main.container{padding-top:24px; padding-bottom:40px}
+
+/* Header nav */
+.site-header{
+  position:sticky; top:0; z-index:20;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--border);
+}
+.nav{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 0}
+.brand{font-weight:700; text-decoration:none; color:var(--text)}
+.nav a{color:var(--text); text-decoration:none; margin-left:10px}
+.nav a:hover{text-decoration:underline}
+.muted{color:var(--muted)}
+
+/* Cards/Grid for post list */
+.card{
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow); padding:16px;
+}
+.grid{
+  display:grid; gap:14px;
+  grid-template-columns:repeat(auto-fill, minmax(260px,1fr));
+}
+
+/* Buttons */
+.btn{
+  display:inline-block; padding:10px 14px;
+  border:1px solid var(--border); border-radius:10px;
+  background:#fff; color:var(--text); text-decoration:none; cursor:pointer;
+}
+.btn:hover{filter:brightness(0.98)}
+.btn.primary{background:var(--primary); color:#fff; border-color:transparent}
+.btn.danger{background:var(--danger); color:#fff; border-color:transparent}
+
+/* Forms */
+.form{display:grid; gap:12px; max-width:700px}
+label{display:grid; gap:6px; font-weight:600}
+.helper{color:var(--muted); font-size:.9rem}
+input[type=text], input[type=email], input[type=password], textarea{
+  width:100%; padding:10px 12px;
+  border:1px solid var(--border); border-radius:10px; background:#fff; outline:none;
+}
+input:focus, textarea:focus{
+  box-shadow:0 0 0 4px var(--ring); border-color:var(--primary);
+}
+textarea{min-height:150px; resize:vertical}
+
+/* Small UI utilities */
+.meta{color:var(--muted); font-size:.92rem}
+.mt-2{margin-top:12px}
+.mt-3{margin-top:18px}
+.mt-4{margin-top:24px}
+.prose{max-width:760px}
